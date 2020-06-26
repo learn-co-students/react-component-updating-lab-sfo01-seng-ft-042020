@@ -10,7 +10,14 @@ class Timer extends Component {
     };
   }
 
-  //Your code here
+  componentDidUpdate() {
+    const opts = {0: "none", 1: "inline"}
+    this.timer.current.style.display = opts[Math.floor(Math.random() * 2)]
+  }
+
+  shouldComponentUpdate() {
+    return true;
+  }
 
   componentDidMount() {
     this.interval = setInterval(
